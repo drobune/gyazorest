@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr" class="redesign no-js">
+<head prefix="og: http://ogp.me/ns#">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge"><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"VgAEV1RTGwABU1NSAAQ="};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o?o:e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({QJf3ax:[function(t,e){function n(t){function e(e,n,a){t&&t(e,n,a),a||(a={});for(var c=s(e),f=c.length,u=i(a,o,r),d=0;f>d;d++)c[d].apply(u,n);return u}function a(t,e){f[t]=s(t).concat(e)}function s(t){return f[t]||[]}function c(){return n(e)}var f={};return{on:a,emit:e,create:c,listeners:s,_events:f}}function r(){return{}}var o="nr@context",i=t("gos");e.exports=n()},{gos:"7eSDFh"}],ee:[function(t,e){e.exports=t("QJf3ax")},{}],3:[function(t){function e(t){try{i.console&&console.log(t)}catch(e){}}var n,r=t("ee"),o=t(1),i={};try{n=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(i.console=!0,-1!==n.indexOf("dev")&&(i.dev=!0),-1!==n.indexOf("nr_dev")&&(i.nrDev=!0))}catch(a){}i.nrDev&&r.on("internal-error",function(t){e(t.stack)}),i.dev&&r.on("fn-err",function(t,n,r){e(r.stack)}),i.dev&&(e("NR AGENT IN DEVELOPMENT MODE"),e("flags: "+o(i,function(t){return t}).join(", ")))},{1:23,ee:"QJf3ax"}],4:[function(t){function e(t,e,n,i,s){try{c?c-=1:r("err",[s||new UncaughtException(t,e,n)])}catch(f){try{r("ierr",[f,(new Date).getTime(),!0])}catch(u){}}return"function"==typeof a?a.apply(this,o(arguments)):!1}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function n(t){r("err",[t,(new Date).getTime()])}var r=t("handle"),o=t(6),i=t("ee"),a=window.onerror,s=!1,c=0;t("loader").features.err=!0,t(4),window.onerror=e;try{throw new Error}catch(f){"stack"in f&&(t(1),t(5),"addEventListener"in window&&t(2),window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)&&t(3),s=!0)}i.on("fn-start",function(){s&&(c+=1)}),i.on("fn-err",function(t,e,r){s&&(this.thrown=!0,n(r))}),i.on("fn-end",function(){s&&!this.thrown&&c>0&&(c-=1)}),i.on("internal-error",function(t){r("ierr",[t,(new Date).getTime(),!0])})},{1:10,2:7,3:11,4:3,5:9,6:24,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],5:[function(t){t("loader").features.ins=!0},{loader:"G9z0Bl"}],6:[function(t){function e(){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var n=t("ee"),r=t("handle"),o=t(1);t("loader").features.stn=!0,t(2),n.on("fn-start",function(t){var e=t[0];e instanceof Event&&(this.bstStart=Date.now())}),n.on("fn-end",function(t,e){var n=t[0];n instanceof Event&&r("bst",[n,e,this.bstStart,Date.now()])}),o.on("fn-start",function(t,e,n){this.bstStart=Date.now(),this.bstType=n}),o.on("fn-end",function(t,e){r("bstTimer",[e,this.bstStart,Date.now(),this.bstType])}),n.on("pushState-start",function(){this.time=Date.now(),this.startPath=location.pathname+location.hash}),n.on("pushState-end",function(){r("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),"addEventListener"in window.performance&&(window.performance.addEventListener("webkitresourcetimingbufferfull",function(){r("bstResource",[window.performance.getEntriesByType("resource")]),window.performance.webkitClearResourceTimings()},!1),window.performance.addEventListener("resourcetimingbufferfull",function(){r("bstResource",[window.performance.getEntriesByType("resource")]),window.performance.clearResourceTimings()},!1)),document.addEventListener("scroll",e,!1),document.addEventListener("keypress",e,!1),document.addEventListener("click",e,!1)}},{1:10,2:8,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],7:[function(t,e){function n(t){i.inPlace(t,["addEventListener","removeEventListener"],"-",r)}function r(t){return t[1]}var o=(t(1),t("ee").create()),i=t(2)(o),a=t("gos");if(e.exports=o,n(window),"getPrototypeOf"in Object){for(var s=document;s&&!s.hasOwnProperty("addEventListener");)s=Object.getPrototypeOf(s);s&&n(s);for(var c=XMLHttpRequest.prototype;c&&!c.hasOwnProperty("addEventListener");)c=Object.getPrototypeOf(c);c&&n(c)}else XMLHttpRequest.prototype.hasOwnProperty("addEventListener")&&n(XMLHttpRequest.prototype);o.on("addEventListener-start",function(t){if(t[1]){var e=t[1];"function"==typeof e?this.wrapped=t[1]=a(e,"nr@wrapped",function(){return i(e,"fn-",null,e.name||"anonymous")}):"function"==typeof e.handleEvent&&i.inPlace(e,["handleEvent"],"fn-")}}),o.on("removeEventListener-start",function(t){var e=this.wrapped;e&&(t[1]=e)})},{1:24,2:25,ee:"QJf3ax",gos:"7eSDFh"}],8:[function(t,e){var n=(t(2),t("ee").create()),r=t(1)(n);e.exports=n,r.inPlace(window.history,["pushState"],"-")},{1:25,2:24,ee:"QJf3ax"}],9:[function(t,e){var n=(t(2),t("ee").create()),r=t(1)(n);e.exports=n,r.inPlace(window,["requestAnimationFrame","mozRequestAnimationFrame","webkitRequestAnimationFrame","msRequestAnimationFrame"],"raf-"),n.on("raf-start",function(t){t[0]=r(t[0],"fn-")})},{1:25,2:24,ee:"QJf3ax"}],10:[function(t,e){function n(t,e,n){t[0]=o(t[0],"fn-",null,n)}var r=(t(2),t("ee").create()),o=t(1)(r);e.exports=r,o.inPlace(window,["setTimeout","setInterval","setImmediate"],"setTimer-"),r.on("setTimer-start",n)},{1:25,2:24,ee:"QJf3ax"}],11:[function(t,e){function n(){f.inPlace(this,p,"fn-")}function r(t,e){f.inPlace(e,["onreadystatechange"],"fn-")}function o(t,e){return e}function i(t,e){for(var n in t)e[n]=t[n];return e}var a=t("ee").create(),s=t(1),c=t(2),f=c(a),u=c(s),d=window.XMLHttpRequest,p=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"];e.exports=a,window.XMLHttpRequest=function(t){var e=new d(t);try{a.emit("new-xhr",[],e),u.inPlace(e,["addEventListener","removeEventListener"],"-",o),e.addEventListener("readystatechange",n,!1)}catch(r){try{a.emit("internal-error",[r])}catch(i){}}return e},i(d,XMLHttpRequest),XMLHttpRequest.prototype=d.prototype,f.inPlace(XMLHttpRequest.prototype,["open","send"],"-xhr-",o),a.on("send-xhr-start",r),a.on("open-xhr-start",r)},{1:7,2:25,ee:"QJf3ax"}],12:[function(t){function e(t){var e=this.params,r=this.metrics;if(!this.ended){this.ended=!0;for(var i=0;c>i;i++)t.removeEventListener(s[i],this.listener,!1);if(!e.aborted){if(r.duration=(new Date).getTime()-this.startTime,4===t.readyState){e.status=t.status;var a=t.responseType,f="arraybuffer"===a||"blob"===a||"json"===a?t.response:t.responseText,u=n(f);if(u&&(r.rxSize=u),this.sameOrigin){var d=t.getResponseHeader("X-NewRelic-App-Data");d&&(e.cat=d.split(", ").pop())}}else e.status=0;r.cbTime=this.cbTime,o("xhr",[e,r,this.startTime])}}}function n(t){if("string"==typeof t&&t.length)return t.length;if("object"!=typeof t)return void 0;if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if("undefined"!=typeof FormData&&t instanceof FormData)return void 0;try{return JSON.stringify(t).length}catch(e){return void 0}}function r(t,e){var n=i(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}if(window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)){t("loader").features.xhr=!0;var o=t("handle"),i=t(2),a=t("ee"),s=["load","error","abort","timeout"],c=s.length,f=t(1);t(4),t(3),a.on("new-xhr",function(){this.totalCbs=0,this.called=0,this.cbTime=0,this.end=e,this.ended=!1,this.xhrGuids={}}),a.on("open-xhr-start",function(t){this.params={method:t[0]},r(this,t[1]),this.metrics={}}),a.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),a.on("send-xhr-start",function(t,e){var r=this.metrics,o=t[0],i=this;if(r&&o){var f=n(o);f&&(r.txSize=f)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(i.params.aborted=!0),("load"!==t.type||i.called===i.totalCbs&&(i.onloadCalled||"function"!=typeof e.onload))&&i.end(e)}catch(n){try{a.emit("internal-error",[n])}catch(r){}}};for(var u=0;c>u;u++)e.addEventListener(s[u],this.listener,!1)}),a.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),a.on("xhr-load-added",function(t,e){var n=""+f(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),a.on("xhr-load-removed",function(t,e){var n=""+f(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),a.on("addEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-added",[t[1],t[2]],e)}),a.on("removeEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-removed",[t[1],t[2]],e)}),a.on("fn-start",function(t,e,n){e instanceof XMLHttpRequest&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),a.on("fn-end",function(t,e){this.xhrCbStart&&a.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}},{1:"XL7HBI",2:13,3:11,4:7,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],13:[function(t,e){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");return!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname),r.sameOrigin=!e.hostname||e.hostname===document.domain&&e.port===n.port&&e.protocol===n.protocol,r}},{}],14:[function(t,e){function n(t){return function(){r(t,[(new Date).getTime()].concat(i(arguments)))}}var r=t("handle"),o=t(1),i=t(2);"undefined"==typeof window.newrelic&&(newrelic=window.NREUM);var a=["setPageViewName","addPageAction","setCustomAttribute","finished","addToTrace","inlineHit","noticeError"];o(a,function(t,e){window.NREUM[e]=n("api-"+e)}),e.exports=window.NREUM},{1:23,2:24,handle:"D5DuLP"}],"7eSDFh":[function(t,e){function n(t,e,n){if(r.call(t,e))return t[e];var o=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:o,writable:!0,enumerable:!1}),o}catch(i){}return t[e]=o,o}var r=Object.prototype.hasOwnProperty;e.exports=n},{}],gos:[function(t,e){e.exports=t("7eSDFh")},{}],handle:[function(t,e){e.exports=t("D5DuLP")},{}],D5DuLP:[function(t,e){function n(t,e,n){return r.listeners(t).length?r.emit(t,e,n):(o[t]||(o[t]=[]),void o[t].push(e))}var r=t("ee").create(),o={};e.exports=n,n.ee=r,r.q=o},{ee:"QJf3ax"}],id:[function(t,e){e.exports=t("XL7HBI")},{}],XL7HBI:[function(t,e){function n(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:i(t,o,function(){return r++})}var r=1,o="nr@id",i=t("gos");e.exports=n},{gos:"7eSDFh"}],G9z0Bl:[function(t,e){function n(){var t=l.info=NREUM.info;if(t&&t.licenseKey&&t.applicationID&&f&&f.body){s(h,function(e,n){e in t||(t[e]=n)}),l.proto="https"===p.split(":")[0]||t.sslForHttp?"https://":"http://",a("mark",["onload",i()]);var e=f.createElement("script");e.src=l.proto+t.agent,f.body.appendChild(e)}}function r(){"complete"===f.readyState&&o()}function o(){a("mark",["domContent",i()])}function i(){return(new Date).getTime()}var a=t("handle"),s=t(1),c=(t(2),window),f=c.document,u="addEventListener",d="attachEvent",p=(""+location).split("?")[0],h={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-627.min.js"},l=e.exports={offset:i(),origin:p,features:{}};f[u]?(f[u]("DOMContentLoaded",o,!1),c[u]("load",n,!1)):(f[d]("onreadystatechange",r),c[d]("onload",n)),a("mark",["firstbyte",i()])},{1:23,2:14,handle:"D5DuLP"}],loader:[function(t,e){e.exports=t("G9z0Bl")},{}],23:[function(t,e){function n(t,e){var n=[],o="",i=0;for(o in t)r.call(t,o)&&(n[i]=e(o,t[o]),i+=1);return n}var r=Object.prototype.hasOwnProperty;e.exports=n},{}],24:[function(t,e){function n(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(0>o?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=n},{}],25:[function(t,e){function n(t){return!(t&&"function"==typeof t&&t.apply&&!t[i])}var r=t("ee"),o=t(1),i="nr@wrapper",a=Object.prototype.hasOwnProperty;e.exports=function(t){function e(t,e,r,a){function nrWrapper(){var n,i,s,f;try{i=this,n=o(arguments),s=r&&r(n,i)||{}}catch(d){u([d,"",[n,i,a],s])}c(e+"start",[n,i,a],s);try{return f=t.apply(i,n)}catch(p){throw c(e+"err",[n,i,p],s),p}finally{c(e+"end",[n,i,f],s)}}return n(t)?t:(e||(e=""),nrWrapper[i]=!0,f(t,nrWrapper),nrWrapper)}function s(t,r,o,i){o||(o="");var a,s,c,f="-"===o.charAt(0);for(c=0;c<r.length;c++)s=r[c],a=t[s],n(a)||(t[s]=e(a,f?s+o:o,i,s))}function c(e,n,r){try{t.emit(e,n,r)}catch(o){u([o,e,n,r])}}function f(t,e){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(t);return n.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(r){u([r])}for(var o in t)a.call(t,o)&&(e[o]=t[o]);return e}function u(e){try{t.emit("internal-error",e)}catch(n){}}return t||(t=r),e.inPlace=s,e.flag=i,e}},{1:24,ee:"QJf3ax"}]},{},["G9z0Bl",4,12,6,5]);</script><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","queueTime":1,"licenseKey":"42869b6ed3","agent":"js-agent.newrelic.com/nr-627.min.js","transactionName":"b1QHMUtVDRdSW0YKXVYeIxBXVxcNXFYdCEdVUEsSUF8KSkVRVxRBAlUKBkxZBgpH","applicationID":"3172075","errorBeacon":"bam.nr-data.net","applicationTime":412}</script>
+  <script>(function(d) { d.className = d.className.replace(/\bno-js/, ''); })(document.documentElement);</script>
+          <script src="//cdn.optimizely.com/js/237572123.js"></script>
+  
+    <title>Getting started - Mozilla | MDN</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="index, follow">
+  <link rel="home" href="/en-US/">
+  <link rel="copyright" href="#copyright">
+
+  <link href="//mozorg.cdn.mozilla.net/media/css/tabzilla-min.css" type="text/css" rel="stylesheet">
+              <link rel="stylesheet" media="all" href="https://developer.cdn.mozilla.net/media/css/mdn-min.css?build=63256d0" />
+
+      
+    <link rel="stylesheet" media="all" href="https://developer.cdn.mozilla.net/media/css/wiki-min.css?build=63256d0" />
+
+    
+                  <link rel="stylesheet" type="text/css" href="/en-US/Add-ons$styles">
+          
+  <!-- common social tags -->
+    <meta property="og:type" content="website">
+  <meta property="og:image" content="https://developer.mozilla.org/media/img/opengraph-logo.png">
+  <meta property="og:site_name" content="Mozilla Developer Network">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:image" content="https://developer.mozilla.org/media/img/opengraph-logo.png">
+  <meta name="twitter:site" content="@NewOnMDN">
+  <meta name="twitter:creator" content="@NewOnMDN">
+
+  <link rel="search" type="application/opensearchdescription+xml" href="https://developer.mozilla.org/en-US/search/xml" title="Mozilla Developer Network">
+
+  <!-- third-generation iPad with high-resolution Retina display: -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://developer.cdn.mozilla.net/media/img/favicon144.png">
+  <!-- iPhone with high-resolution Retina display: -->
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="https://developer.cdn.mozilla.net/media/img/favicon114.png">
+  <!-- first- and second-generation iPad: -->
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="https://developer.cdn.mozilla.net/media/img/favicon72.png">
+  <!-- non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
+  <link rel="apple-touch-icon-precomposed" href="https://developer.cdn.mozilla.net/media/img/favicon57.png">
+  <!-- basic favicon -->
+          <link rel="shortcut icon" href="https://developer.cdn.mozilla.net/media/img/favicon32.png">
+  <!--[if IE]>
+  <meta http-equiv="imagetoolbar" content="no">
+  <script src="https://developer.cdn.mozilla.net/media/js/libs/html5.js"></script>
+  <![endif]-->
+
+    <link rel="alternate" type="application/json" href="/en-US/Add-ons/SDK/Tutorials/Getting_started$json">
+  <link rel="canonical" href="https://developer.mozilla.org/en-US/Add-ons/SDK/Tutorials/Getting_started" >
+
+            <link rel="alternate" hreflang="de" href="/de/Add-ons/SDK/Tutorials/Getting_started" title="Getting started">
+          <link rel="alternate" hreflang="es" href="/es/docs/Mozilla/Add-ons/SDK/Tutorials/Getting_started" title="Primeros pasos">
+          <link rel="alternate" hreflang="ja" href="/ja/docs/Mozilla/Add-ons/SDK/%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB/Getting_started" title="入門">
+          <link rel="alternate" hreflang="zh-CN" href="/zh-CN/docs/Mozilla/Add-ons/SDK/Tutorials/Getting_started" title="Getting started">
+      
+  <!-- document-specific social tags -->
+  <meta property="og:title" content="Getting started">
+  <meta property="og:url" content="https://developer.mozilla.org/en-US/Add-ons/SDK/Tutorials/Getting_started">
+  <meta name="twitter:url" content="https://developer.mozilla.org/en-US/Add-ons/SDK/Tutorials/Getting_started">
+  <meta name="twitter:title" content="Getting started">
+    <meta property="og:description" content="In this tutorial we&#39;ve built and packaged an add-on using three commands:">
+  <meta name="description" content="In this tutorial we&#39;ve built and packaged an add-on using three commands:">
+  <meta name="twitter:description" content="In this tutorial we&#39;ve built and packaged an add-on using three commands:">
+  
+      <script type="text/javascript">
+
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-36116321-5', 'mozilla.org');
+    ga('set', 'anonymizeIp', true);
+
+    
+    
+    
+    (function() {
+        // http://cfsimplicity.com/61/removing-analytics-clutter-from-campaign-urls
+        var win = window;
+        var removeUtms = function(){
+            var location = win.location;
+            if (location.href.indexOf('utm') != -1 && win.history.replaceState) {
+                win.history.replaceState({}, '', location.pathname);
+            }
+        };
+
+        ga('send', 'pageview', {'hitCallback': removeUtms});
+    })();
+</script>
+  </head>
+<body data-slug="Mozilla/Add-ons/SDK/Tutorials/Getting_started" contextmenu="edit-history-menu" class="document zone ">
+
+  <script type="text/javascript">
+    (function(win) {
+        'use strict';
+
+                    (function(){
+  var FLAGS = {
+    'demos_10th': true,'demos_10th_preload': true,'derby_closed': true,'dirtiness_tracking': true,'fellowship_applications_open': true,'ga_outbound_links': true,'github_beta_notice': false,'github_login': true,'kumaediting': false,'page_move': false,'promote_script': false,'redirect_messages': false,'registration_disabled': false,'search_explanation': false,'search_suggestions': false,'share_links': false,'top_contributors': false,'wiki_spellcheck': false
+    },
+    SWITCHES = {
+    'wiki_error_on_delete': false,'wiki_force_immediate_rendering': false,'render_stale_documents_async': true,'enable_optimizely': true,'welcome_email': true,'application_ACAO': false,'store_revision_ips': true
+    },
+    SAMPLES = {
+    
+    };
+  window.waffle = {
+    "flag_is_active": function waffle_flag(flag_name) {
+      
+      return !!FLAGS[flag_name];
+    },
+    "switch_is_active": function waffle_switch(switch_name) {
+      
+      return !!SWITCHES[switch_name];
+    },
+    "sample_is_active": function waffle_sample(sample_name) {
+      
+      return !!SAMPLES[sample_name];
+    },
+    "FLAGS": FLAGS,
+    "SWITCHES": SWITCHES,
+    "SAMPLES": SAMPLES
+  };
+})();
+
+                
+        // This represents the site configuration
+        win.mdn = {
+            build: '63256d0',
+            // Properties and settings for CKEditor will go here
+            ckeditor: {},
+            // Feature test results and methods will be placed here
+            features: {},
+            // The path to media (images, CSS, JS) in MDN
+            mediaPath: 'https://developer.cdn.mozilla.net/media/',
+            // Optimizely API
+            optimizely: win['optimizely'] || [],
+            // Site notifications
+                        notifications: [],
+                        // Wiki-specific settings will be placed here
+            wiki: {
+                autosuggestTitleUrl: '/en-US/docs/get-documents'
+            },
+            searchFilters: [{"name": "Document type", "slug": "type", "order": 1, "filters": [{"name": "Tools", "slug": "tools", "shortcut": null}, {"name": "Code Samples", "slug": "code", "shortcut": null}, {"name": "How-To & Tutorial", "slug": "howto", "shortcut": null}]}, {"name": "Skill level", "slug": "skill", "order": 1, "filters": [{"name": "I'm an Expert", "slug": "advanced", "shortcut": null}, {"name": "Intermediate", "slug": "intermediate", "shortcut": null}, {"name": "I'm Learning", "slug": "beginner", "shortcut": null}]}, {"name": "Topics", "slug": "topic", "order": 1, "filters": [{"name": "Open Web Apps", "slug": "apps", "shortcut": null}, {"name": "HTML", "slug": "html", "shortcut": null}, {"name": "CSS", "slug": "css", "shortcut": null}, {"name": "JavaScript", "slug": "js", "shortcut": null}, {"name": "APIs and DOM", "slug": "api", "shortcut": null}, {"name": "Canvas", "slug": "canvas", "shortcut": null}, {"name": "SVG", "slug": "svg", "shortcut": null}, {"name": "MathML", "slug": "mathml", "shortcut": null}, {"name": "WebGL", "slug": "webgl", "shortcut": null}, {"name": "XUL", "slug": "xul", "shortcut": null}, {"name": "Marketplace", "slug": "marketplace", "shortcut": null}, {"name": "Firefox", "slug": "firefox", "shortcut": null}, {"name": "Firefox for Android", "slug": "firefox-mobile", "shortcut": "fennec"}, {"name": "Firefox for Desktop", "slug": "firefox-desktop", "shortcut": "fx"}, {"name": "Firefox OS", "slug": "firefox-os", "shortcut": "fxos"}, {"name": "Mobile", "slug": "mobile", "shortcut": null}, {"name": "Web Development", "slug": "webdev", "shortcut": null}, {"name": "Add-ons & Extensions", "slug": "addons", "shortcut": null}, {"name": "Games", "slug": "games", "shortcut": null}, {"name": "Writing Documentation", "slug": "docs", "shortcut": null}, {"name": "XPCOM", "slug": "xpcom", "shortcut": ""}]}]
+        };
+
+        // Ensures gettext always returns something, is always set
+        win.gettext = function(x) {
+            return x;
+        }
+    })(window);
+</script>
+  
+
+  
+
+  
+  <ul id="nav-access">
+    <li><a href="#document-main" id="skip-main">Skip to main content</a></li>
+    <li><a id="skip-language" href="#language">Select language</a></li>
+          <li><a href="#q" id="skip-search">Skip to search</a></li>
+      </ul>
+
+  <!-- Header -->
+  <header id="main-header"><div class="center">
+
+    <a href="//www.mozilla.org/" id="tabzilla" class="no-track" data-infobar="update">mozilla</a>
+
+    <div class="clear header-clear"></div>
+
+    <a href="/en-US/" class="logo">Mozilla Developer Network</a>
+
+    <div class="header-login">
+                    
+                
+    <form>
+      <div class="oauth-login-container">
+          <div class="oauth-login-options" tabIndex="0">
+              <span class="oauth-login-options-text">
+                <span class="oauth-login-options-text-icons">Sign in with</span>
+                <span class="oauth-login-options-text-no-icons">Sign in</span>
+              </span>
+              <span class="oauth-icon oauth-persona launch-persona-login" data-service="Persona" data-next="/en-US/Add-ons/SDK/Tutorials/Getting_started" title="Persona"><i class="icon-user" aria-hidden="true"></i></span>
+                          <span class="oauth-icon oauth-github" data-service="GitHub" data-href="/users/github/login/?next=%2Fen-US%2FAdd-ons%2FSDK%2FTutorials%2FGetting_started" title="GitHub"><i class="icon-github" aria-hidden="true"></i></span>
+                      </div>
+          <div class="submenu oauth-login-picker" aria-hidden="true">
+              <ul>
+                  <li><a href="/en-US/users/signin" class="login-link launch-persona-login" data-next="/en-US/Add-ons/SDK/Tutorials/Getting_started" data-service="Persona"><i class="icon-user" aria-hidden="true"></i>Persona</a></li>
+                                  <li><a href="/users/github/login/?next=%2Fen-US%2FAdd-ons%2FSDK%2FTutorials%2FGetting_started" class="login-link" data-service="GitHub"><i class="icon-github" aria-hidden="true"></i>GitHub</a></li>
+                              </ul>
+          </div>
+      </div>
+    </form>
+            </div>
+
+    <nav id="main-nav" role="navigation"><ul><li><a href="/en-US/docs/Zones">Zones<i aria-hidden="true" class="icon-caret-down"></i></a>
+
+        <div class="submenu submenu-single" id="nav-zones-submenu">
+          <div class="submenu-column">
+            <ul>
+              <li><a href="/en-US/Add-ons">Add-ons</a></li>
+              <li><a href="/en-US/docs/Apps">App Center</a></li>
+              <li><a href="/en-US/docs/Firefox">Firefox</a></li>
+              <li><a href="/en-US/Marketplace">Firefox Marketplace</a></li>
+              <li><a href="/en-US/docs/Firefox_OS">Firefox OS</a></li>
+              <li><a href="/en-US/docs/Persona">Persona</a></li>
+            </ul>
+          </div>
+        </div>
+      </li><li><a href="/en-US/docs/Web">Web Platform<i aria-hidden="true" class="icon-caret-down"></i></a>
+
+        <div class="submenu" id="nav-platform-submenu">
+          <div class="submenu-column">
+            <div class="title">Technologies</div>
+            <ul>
+              <li><a href="/en-US/docs/Web/HTML">HTML</a></li>
+              <li><a href="/en-US/docs/Web/CSS">CSS</a></li>
+              <li><a href="/en-US/docs/Web/JavaScript">JavaScript</a></li>
+              <li><a href="/en-US/docs/Web/Guide/Graphics">Graphics</a></li>
+              <li><a href="/en-US/docs/Web/API">APIs / DOM</a></li>
+              <li><a href="/en-US/Apps">Apps</a></li>
+              <li><a href="/en-US/docs/Web/MathML">MathML</a></li>
+            </ul>
+          </div><div class="submenu-column last">
+            <div class="title">References & Guides</div>
+            <ul>
+              <li><a href="/en-US/Learn">Learn the Web</a></li>
+              <li><a href="/en-US/docs/Web/Tutorials">Tutorials</a></li>
+              <li><a href="/en-US/docs/Web/Reference">References</a></li>
+              <li><a href="/en-US/docs/Web/Guide">Developer Guides</a></li>
+              <li><a href="/en-US/docs/Web/Accessibility">Accessibility</a></li>
+              <li><a href="/en-US/demos/">Demos</a></li>
+              <li><a href="/en-US/docs/Web">...more docs</a></li>
+            </ul>
+          </div>
+        </div>
+      </li><li><a href="/en-US/docs/Tools">Tools</a></li><li><a href="/en-US/demos/">Demos</a></li><li><a href="/en-US/docs/Mozilla/Connect">Connect</a></li><li class="nav-search-link"><a href="/en-US/search" title="Search"><i aria-hidden="true" class="icon-search"></i></a></li><li class="main-nav-search"><form action="/en-US/search" method="get" role="search">
+        <div class="search-wrap">
+          <label for="main-q" class="offscreen">Search</label>
+          <input type="search" id="main-q" name="q" placeholder="Search" data-value="" value="" />
+          <span class="search-trigger"><i aria-hidden="true" class="icon-search"></i></span>&nbsp;
+          <button type="submit" class="offscreen">Search</button>
+        </div>
+      </form></li></ul></nav>
+  </div></header>
+
+  <!-- Content will go here -->
+  <main id="content"><div class="center clear">
+  
+                <div class="zone-article-header" id="document-main"><div class="center">
+          <!-- zone title -->
+          <div class="zone-title"><a href="/en-US/Add-ons">Add-ons</a></div>
+          <!-- zone image -->
+          <div class="zone-image"></div>
+        </div></div>
+      
+     <!-- end is_zone -->
+
+
+    <div class="wiki-main-content" ><div class="center">
+            <div class="article-meta">
+        <!-- action buttons -->
+        
+        
+        
+
+  <ul class="page-buttons" data-sticky="false"><li><button id="languages-menu" class="transparent" aria-haspopup="true" aria-owns="languages-menu-submenu" aria-expanded="false"><span>Languages</span><i aria-hidden="true" class="icon-globe"></i></button>
+
+        <div class="submenu" id="languages-menu-submenu">
+          <div class="submenu-column">
+            <ul id="translations">
+                                                <li><bdi><a rel="internal" href="/de/Add-ons/SDK/Tutorials/Getting_started" title="Getting started">Deutsch</a></bdi></li>
+                                  <li><bdi><a rel="internal" href="/es/docs/Mozilla/Add-ons/SDK/Tutorials/Getting_started" title="Primeros pasos">Español</a></bdi></li>
+                                  <li><bdi><a rel="internal" href="/ja/docs/Mozilla/Add-ons/SDK/%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB/Getting_started" title="入門">日本語</a></bdi></li>
+                                  <li><bdi><a rel="internal" href="/zh-CN/docs/Mozilla/Add-ons/SDK/Tutorials/Getting_started" title="Getting started">中文 (简体)</a></bdi></li>
+                              
+                              <li><a href="/en-US/Add-ons/SDK/Tutorials/Getting_started$locales" rel="nofollow, noindex">Add a translation</a></li>
+                          </ul>
+          </div>
+        </div></li><li class="page-buttons-edit"><a href="/en-US/Add-ons/SDK/Tutorials/Getting_started$edit" class="button" data-optimizely-hook="button-edit-doc" id="edit-button">Edit<i aria-hidden="true" class="icon-pencil"></i></a></li><li><button id="advanced-menu" class="only-icon" aria-haspopup="true" aria-owns="advanced-menu-submenu" aria-expanded="false"><span>Advanced</span><i aria-hidden="true" class="icon-cog"></i></button>
+
+        <div class="submenu" id="advanced-menu-submenu">
+          <!-- this page -->
+          <div class="submenu-column">
+            <div class="title">Advanced</div>
+            <ul>
+                <li><a href="/en-US/Add-ons/SDK/Tutorials/Getting_started$history" rel="nofollow, noindex">History</a></li>
+                                                                
+                
+                                
+                                                                <li class="page-print"><a href="#" onclick="return window.print();">Print this page</a></li>
+            </ul>
+          </div>
+        </div>
+  </li></ul>
+
+        <!-- crumbs -->
+          <nav class="crumbs" role="navigation"><ol xmlns:v="http://rdf.data-vocabulary.org/#" aria-label="breadcrumbs">
+    <li typeof="v:Breadcrumb"><a href="/en-US" rel="v:url" property="v:title">MDN</a></li>
+          <li class="crumb" typeof="v:Breadcrumb"><a href="/en-US/docs/Mozilla" rel="v:url" property="v:title">Mozilla</a></li>
+          <li class="crumb" typeof="v:Breadcrumb"><a href="/en-US/Add-ons" rel="v:url" property="v:title">Add-ons</a></li>
+          <li class="crumb" typeof="v:Breadcrumb"><a href="/en-US/Add-ons/SDK" rel="v:url" property="v:title">Add-on SDK</a></li>
+          <li class="crumb" typeof="v:Breadcrumb"><a href="/en-US/Add-ons/SDK/Tutorials" rel="v:url" property="v:title">Tutorials</a></li>
+        <li class="crumb" typeof="v:Breadcrumb" property="v:title">Getting started</li>
+  </ol></nav>
+      </div>
+
+      <!-- heading -->
+      <div id="wiki-document-head" class="document-head">
+          <span class="from-search-previous-box">
+            <a class="button from-search-previous only-icon disabled" title="Previous Search Result" data-empty-title="No Previous Search Result"><i aria-hidden="true" class="icon-chevron-left"></i></a>
+          </span>
+          <span class="from-search-navigate-wrap">
+            <a href="#" class="from-search-navigate"><span class="from-search-navigate-up"><i aria-hidden="true" class="icon-double-angle-up"></i></span><span class="from-search-navigate-down"><i aria-hidden="true" class="icon-double-angle-down"></i></span></a>
+          </span>
+          <div class="from-search-toc">
+            <span class="title">Your Search Results</span>
+            <ol></ol>
+          </div>
+          <span class="from-search-next-box">
+            <a class="button from-search-next only-icon disabled" title="Next Search Result" data-empty-title="No Previous Search Result"><i aria-hidden="true" class="icon-chevron-right"></i></a>
+          </span>
+
+        <h1>Getting started</h1>
+
+        
+      </div>
+      
+      <!-- start the main content container -->
+        <div id="wiki-column-container" class="wiki-right-present wiki-left-present">
+
+                    <!-- additional controls row; hidden unless needed -->
+          <div id="wiki-controls" class="column-container column-container-reverse">
+            <div class="column-strip">
+              <!-- Show TOC "show" link -->
+            </div>
+            <div class="column-half">
+            </div>
+            <div class="column-strip quick-links hidden">
+              <a href="#show-quick-links" class="title smaller" id="show-quick-links"><i aria-hidden="true" class="icon-caret-down"></i>Show Sidebar</a>
+            </div>
+          </div>
+          
+          <!-- content row with three strips -->
+          <div class="column-container column-container-reverse">
+
+                          <!-- TOC, approvals, etc -->
+              <div class="column-strip wiki-column" id="wiki-right">
+                            <!-- table of contents -->
+              <div id="toc" class="toc toggleable">
+                <a href="#toc" class="title toggler" data-open-icon="icon-plus" data-closed-icon="icon-minus">In This Article<i></i></a>
+                <ol class="toggle-container">
+                  <li><a href="#Prerequisites" rel="internal">Prerequisites</a><li><a href="#Initializing_an_empty_add-on" rel="internal">Initializing an empty add-on</a><li><a href="#Implementing_the_add-on" rel="internal">Implementing the add-on</a><li><a href="#Packaging_the_add-on" rel="internal">Packaging the add-on</a><li><a href="#Summary" rel="internal">Summary</a><li><a href="#What's_next.3F" rel="internal">What's next?</a><li><a href="#Advanced_techniques" rel="internal">Advanced techniques</a><ol><li><a href="#Overriding_the_built-in_modules" rel="internal">Overriding the built-in modules</a><li><a href="#Developing_without_cfx_run" rel="internal">Developing without cfx run</a></ol></li>
+                </ol>
+              </div>
+                            </div>
+            
+                                                  
+            <!-- center: main article content -->
+            <div id="wiki-content" class="column-half wiki-column text-content">
+
+              
+              
+                                                                                          
+              <!-- just the article content -->
+              <article id="wikiArticle">
+                                                      <p>This tutorial walks through creating a simple add-on using the SDK.</p>
+
+<h2 id="Prerequisites">Prerequisites</h2>
+
+<p>To create add-ons for Firefox using the SDK, you'll first need to follow the instructions to <a href="/en-US/Add-ons/SDK/Tutorials/Installation" rel="noreferrer">install and activate the SDK</a>. Once you've done that, you'll be looking at a command prompt.</p>
+
+<h2 id="Initializing_an_empty_add-on">Initializing an empty add-on</h2>
+
+<p>In the command prompt, create a new directory. The directory doesn't have to be under the SDK root: you can create it anywhere you like. Navigate to it, type <code>cfx init</code>, and hit enter:</p>
+
+<pre>mkdir my-addon
+cd my-addon
+cfx init
+</pre>
+
+<p>You'll see some output like this:</p>
+
+<pre>* lib directory created
+* data directory created
+* test directory created
+* doc directory created
+* README.md written
+* package.json written
+* test/test-main.js written
+* lib/main.js written
+* doc/main.md written
+Your sample add-on is now ready for testing:
+try "cfx test" and then "cfx run". Have fun!"
+</pre>
+
+<h2 id="Implementing_the_add-on">Implementing the add-on</h2>
+
+<p>Now you can write the add-on's code, which goes in the "main.js" file in your "lib" directory. This file was created for you in the previous step. Open it and add the following code:</p>
+
+<pre class="brush: js">var buttons = require('sdk/ui/button/action');
+var tabs = require("sdk/tabs");
+
+var button = buttons.ActionButton({
+  id: "mozilla-link",
+  label: "Visit Mozilla",
+  icon: {
+    "16": "./icon-16.png",
+    "32": "./icon-32.png",
+    "64": "./icon-64.png"
+  },
+  onClick: handleClick
+});
+
+function handleClick(state) {
+  tabs.open("https://www.mozilla.org/");
+}
+</pre>
+
+<p>Save the file.</p>
+
+<p>Next, save these three icon files to the "data" directory:</p>
+
+<table class="standard-table">
+ <tbody>
+  <tr>
+   <td><img alt="" src="https://mdn.mozillademos.org/files/7635/icon-16.png" style="width: 16px; height: 16px;"></td>
+   <td>icon-16.png</td>
+  </tr>
+  <tr>
+   <td><img alt="" src="https://mdn.mozillademos.org/files/7637/icon-32.png" style="width: 32px; height: 32px;"></td>
+   <td>icon-32.png</td>
+  </tr>
+  <tr>
+   <td><img alt="" src="https://mdn.mozillademos.org/files/7639/icon-64.png" style="width: 64px; height: 64px;"></td>
+   <td>icon-64.png</td>
+  </tr>
+ </tbody>
+</table>
+
+<p>Back at the command prompt, type:</p>
+
+<pre>cfx run
+</pre>
+
+<p>This is the SDK command to run a new instance of Firefox with your add-on installed. When Firefox launches, in the top-right corner of the browser you'll see an icon with the Firefox logo. Click the icon, and a new tab will open with <a class="external" href="https://www.mozilla.org/" rel="noreferrer">https://www.mozilla.org/</a> loaded into it.</p>
+
+<div class="note">
+<p>You might see an error message like this when you type cfx run:</p>
+
+<pre class="bz_comment_text" id="comment_text_0">A given cfx option has an inappropriate value:
+  ZIP does not support timestamps before 1980</pre>
+
+<p>If so, you've run into <a class="external" href="https://bugzilla.mozilla.org/show_bug.cgi?id=1005412">bug 1005412</a>, meaning that the icon files you downloaded are given a timestamp of 1970. Until this bug is fixed, the workaround is to use the <a class="external" href="http://www.linfo.org/touch.html"><code>touch</code></a> command to update the timestamps:</p>
+
+<pre>touch icon-16.png</pre>
+</div>
+
+<p>That's all this add-on does. It uses two SDK modules: the <a href="/en-US/Add-ons/SDK/Low-Level_APIs/ui_button_action">action button</a> module, which enables you to add buttons to the browser, and the <a href="/en-US/Add-ons/SDK/High-Level_APIs/tabs" rel="noreferrer">tabs</a> module, which enables you to perform basic operations with tabs. In this case, we've created a button whose icon is the Firefox icon, and added a click handler that loads the Mozilla home page in a new tab.</p>
+
+<p><img alt="" src="https://mdn.mozillademos.org/files/7643/mozilla-button.png" style="width: 382px; height: 221px; display: block; margin-left: auto; margin-right: auto;">Try editing this file. For example, we could change the page that gets loaded:</p>
+
+<pre class="brush: js">var buttons = require('sdk/ui/button/action');
+var tabs = require("sdk/tabs");
+
+var button = buttons.ActionButton({
+  id: "mozilla-link",
+  label: "Visit Mozilla",
+  icon: {
+    "16": "./icon-16.png",
+    "32": "./icon-32.png",
+    "64": "./icon-64.png"
+  },
+  onClick: handleClick
+});
+
+function handleClick(state) {
+  tabs.open("https://developer.mozilla.org/");
+}</pre>
+
+<p>At the command prompt, execute <code>cfx run</code> again. This time clicking it takes you to <a href="https://developer.mozilla.org/">https://developer.mozilla.org/</a>.</p>
+
+<h2 id="Packaging_the_add-on">Packaging the add-on</h2>
+
+<p>When you've finished the add-on and are ready to distribute it, you'll need to package it as an XPI file. This is the installable file format for Firefox add-ons. You can distribute XPI files yourself or publish them to <a class="external" href="https://addons.mozilla.org" rel="noreferrer">https://addons.mozilla.org</a> so other users can download and install them.</p>
+
+<p>To build an XPI, just execute the command <code>cfx xpi</code> from the add-on's directory:</p>
+
+<pre>cfx xpi
+</pre>
+
+<p>You should see a message like:</p>
+
+<pre>Exporting extension to my-addon.xpi.
+</pre>
+
+<p>To test that this worked, try installing the XPI file in your own Firefox installation. You can do this by pressing the Ctrl+O key combination (Cmd+O on Mac) from within Firefox, or selecting the "Open" item from Firefox's "File" menu. This will bring up a file selection dialog; navigate to the "my-addon.xpi" file, open it and follow the prompts to install the add-on.</p>
+
+<h2 id="Summary">Summary</h2>
+
+<p>In this tutorial we've built and packaged an add-on using three commands:</p>
+
+<ul>
+ <li><code>cfx init</code> to initialize an empty add-on template</li>
+ <li><code>cfx run</code> to run a new instance of Firefox with the add-on installed, so we can try it out</li>
+ <li><code>cfx xpi</code> to package the add-on into an XPI file for distribution</li>
+</ul>
+
+<p>These are the three main commands you'll use when developing SDK add-ons. There's comprehensive <a href="/en-US/Add-ons/SDK/Tools/cfx" rel="noreferrer">reference documentation</a> covering all the commands you can use and all the options they take.</p>
+
+<p>The add-on code itself uses two SDK modules, <a href="/en-US/Add-ons/SDK/Low-Level_APIs/ui_button_action">action button</a> and <a href="/en-US/Add-ons/SDK/High-Level_APIs/tabs" rel="noreferrer">tabs</a>. There's reference documentation for all the <a href="/en-US/Add-ons/SDK/High-Level_APIs" rel="noreferrer">high-level</a> and <a href="/en-US/Add-ons/SDK/Low-Level_APIs" rel="noreferrer">low-level</a> APIs in the SDK.</p>
+
+<h2 id="What's_next.3F">What's next?</h2>
+
+<p>To get a feel for some of the things you can do with the SDK APIs, try working through some of the <a href="/en-US/Add-ons/SDK/Tutorials" rel="noreferrer">tutorials</a>.</p>
+
+<h2 id="Advanced_techniques">Advanced techniques</h2>
+
+<h3 id="Overriding_the_built-in_modules">Overriding the built-in modules</h3>
+
+<p>The SDK modules you use to implement your add-on are built into Firefox. When you run or package an add-on using <code>cfx run</code> or <code>cfx xpi</code>, the add-on will use the versions of the modules in the version of Firefox that hosts it.</p>
+
+<p>As an add-on developer, this is usually what you want. But if you're developing the SDK modules themselves, of course, it isn't. In this case it's assumed that you have checked out the SDK from its <a class="external" href="https://github.com/mozilla/addon-sdk" rel="noreferrer">GitHub repo</a> and will have run the <a href="/en-US/Add-ons/SDK/Tutorials/Installation" rel="noreferrer">bin/activate</a> script from the root of your checkout.</p>
+
+<p>Then when you invoke <code>cfx run</code> or <code>cfx xpi</code>, you pass the "-o" option:</p>
+
+<pre>cfx run -o
+</pre>
+
+<p>This instructs cfx to use the local copies of the SDK modules, not the ones in Firefox.</p>
+
+<h3 id="Developing_without_cfx_run">Developing without cfx run</h3>
+
+<p>Because <code>cfx run</code> restarts the browser each time you invoke it, it can be a little cumbersome if you are making frequent changes to an add-on. An alternative development model is to use the <a class="external" href="https://addons.mozilla.org/en-US/firefox/addon/autoinstaller/" rel="noreferrer">Extension Auto-Installer</a> add-on: this listens for new XPI files on a specified port and installs them automatically. That way you can test new changes without needing to restart the browser:</p>
+
+<ul>
+ <li>make a change to your add-on</li>
+ <li>run cfx xpi</li>
+ <li>post the add-on to the port specified</li>
+</ul>
+
+<p>You could even automate this workflow with a simple script. For example:</p>
+
+<pre>while true ; do cfx xpi ; wget --post-file=codesy.xpi http://localhost:8888/ ; sleep 5 ; done
+</pre>
+
+<p>Note that the logging level defined for the console is different when you use this method, compared to the logging level used when an add-on is run using <code>cfx run</code>. This means that if you want to see output from <a href="/en-US/Add-ons/SDK/Tutorials/Logging" rel="noreferrer"><code>console.log()</code></a> messages, you'll have to tweak a setting. See the documentation on <a href="/en-US/Add-ons/SDK/Tools/console#Logging_Levels" rel="noreferrer">logging levels</a> for the details on this.</p>
+
+<p>Another example using <a class="external" href="http://gruntjs.com/">grunt</a> and <a class="external" href="https://www.npmjs.com/package/grunt-shell">grunt-shell</a>:</p>
+
+<pre class="brush: js">module.exports = function(grunt) {
+  'use strict';
+  require('matchdep').filterDev('grunt-!(cli)').forEach(grunt.loadNpmTasks);
+  grunt.initConfig({
+    shell: {
+      xpi: {
+        command: [
+          'cd pluginpath',
+          'cfx xpi',
+          'wget --post-file=pluginname.xpi http://localhost:8888/ || echo&gt;/dev/null'
+        ].join('&amp;&amp;')
+      }
+    },
+    watch: {
+      xpi: {
+        files: ['pluginpath/**'],
+        tasks: ['shell:xpi']
+      }
+    }
+  });
+
+  grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-shell');
+  grunt.registerTask('default', ['watch']);
+};</pre>
+                                                </article>
+
+            
+
+              
+                <!-- contributors -->
+                <div class="wiki-block contributors">
+                  <h2 class="offscreen">Document Tags and Contributors</h2>
+                                                      <!-- tags if present -->
+                  <div class="tag-attach-list contributors-sub">
+                    <i aria-hidden="true" class="icon-tags"></i><strong>Tags:</strong>&nbsp;
+                    <ul class="tags tags-small"><li><a href="/en-US/docs/tag/Tutorial">Tutorial</a></li><li><a href="/en-US/docs/tag/Add-on%20SDK">Add-on SDK</a></li></ul>
+                  </div>
+                                    <div class="contributors-sub"> <i aria-hidden="true" class="icon-group"></i><strong>Contributors to this page:</strong> <a href="/en-US/profiles/wbamberg">wbamberg</a>, <a href="/en-US/profiles/groovecoder">groovecoder</a>, <a href="/en-US/profiles/zhangby">zhangby</a>, <a href="/en-US/profiles/tomica">tomica</a>, <a href="/en-US/profiles/gtmalon832">gtmalon832</a>, <a href="/en-US/profiles/maybe">maybe</a>, <a href="/en-US/profiles/Canuckistani">Canuckistani</a>, <a href="/en-US/profiles/kscarfone">kscarfone</a>, <a href="/en-US/profiles/qubic">qubic</a>, <a href="/en-US/profiles/sillyslux">sillyslux</a>, <a href="/en-US/profiles/xfq">xfq</a>, <a href="/en-US/profiles/Khannabyss">Khannabyss</a> </div>                                      <div class="contributors-sub">
+                      <i aria-hidden="true" class="icon-clock-o"></i><strong>Last updated by:</strong>
+                      <a href="/en-US/profiles/wbamberg">wbamberg</a>,
+                      <time datetime="2015-01-19T09:33:53-08:00">Jan 19, 2015 9:33:53 AM</time>
+                    </div>
+                                  </div>
+                          </div>
+
+                          <!-- quick links and zone subnav strip -->
+              <div id="wiki-left" class="column-strip wiki-column">
+
+              
+                <a href="#quick-links" class="title smaller" id="quick-links-toggle"><i aria-hidden="true" class="icon-caret-up"></i>Hide Sidebar</a>
+
+                                  <!-- zone subnav -->
+                    <nav class="zone-subnav-container" role="navigation">
+    <div class="subnav" id="Subnav">
+      
+
+<ol>
+ <li><a href="/en-US/Add-ons/Bootstrapped_extensions" title="Restartless extensions">Restartless extensions</a></li>
+ <li><a href="/en-US/Add-ons/Overlay_Extensions" title="Legacy extensions">Legacy extensions</a></li>
+ <li><a href="/en-US/Add-ons/SDK">Add-on SDK</a><ol> 
+ <li><a href="/en-US/Add-ons/SDK/Tutorials/Installation">Installation</a></li> 
+ <li><a href="/en-US/Add-ons/SDK/Tutorials">Tutorials</a></li> 
+ <li><a href="/en-US/Add-ons/SDK/Guides">Guides</a></li> 
+ <li><a href="/en-US/Add-ons/SDK/High-Level_APIs">High-Level APIs</a>  
+  
+ <ol><li><a href="/en-US/Add-ons/SDK/High-Level_APIs/addon-page">addon-page</a></li><li><a href="/en-US/Add-ons/SDK/High-Level_APIs/base64">base64</a></li><li><a href="/en-US/Add-ons/SDK/High-Level_APIs/clipboard">clipboard</a></li><li><a href="/en-US/Add-ons/SDK/High-Level_APIs/context-menu">context-menu</a></li><li><a href="/en-US/Add-ons/SDK/High-Level_APIs/hotkeys">hotkeys</a></li><li><a href="/en-US/Add-ons/SDK/High-Level_APIs/indexed-db">indexed-db</a></li><li><a href="/en-US/Add-ons/SDK/High-Level_APIs/l10n">l10n</a></li><li><a href="/en-US/Add-ons/SDK/High-Level_APIs/notifications">notifications</a></li><li><a href="/en-US/Add-ons/SDK/High-Level_APIs/page-mod">page-mod</a></li><li><a href="/en-US/Add-ons/SDK/High-Level_APIs/page-worker">page-worker</a></li><li><a href="/en-US/Add-ons/SDK/High-Level_APIs/panel">panel</a></li><li><a href="/en-US/Add-ons/SDK/High-Level_APIs/passwords">passwords</a></li><li><a href="/en-US/Add-ons/SDK/High-Level_APIs/private-browsing">private-browsing</a></li><li><a href="/en-US/Add-ons/SDK/High-Level_APIs/querystring">querystring</a></li><li><a href="/en-US/Add-ons/SDK/High-Level_APIs/request">request</a></li><li><a href="/en-US/Add-ons/SDK/High-Level_APIs/selection">selection</a></li><li><a href="/en-US/Add-ons/SDK/High-Level_APIs/self">self</a></li><li><a href="/en-US/Add-ons/SDK/High-Level_APIs/simple-prefs">simple-prefs</a></li><li><a href="/en-US/Add-ons/SDK/High-Level_APIs/simple-storage">simple-storage</a></li><li><a href="/en-US/Add-ons/SDK/High-Level_APIs/system">system</a></li><li><a href="/en-US/Add-ons/SDK/High-Level_APIs/tabs">tabs</a></li><li><a href="/en-US/Add-ons/SDK/High-Level_APIs/timers">timers</a></li><li><a href="/en-US/Add-ons/SDK/High-Level_APIs/ui">ui</a></li><li><a href="/en-US/Add-ons/SDK/High-Level_APIs/url">url</a></li><li><a href="/en-US/Add-ons/SDK/High-Level_APIs/widget">widget</a></li><li><a href="/en-US/Add-ons/SDK/High-Level_APIs/windows">windows</a></li></ol> 
+  
+ </li> 
+ <li><a href="/en-US/Add-ons/SDK/Low-Level_APIs">Low-Level APIs</a>  
+  
+ <ol><li><a href="/en-US/Add-ons/SDK/Low-Level_APIs/_loader">/loader</a></li><li><a href="/en-US/Add-ons/SDK/Low-Level_APIs/console_plain-text">console/plain-text</a></li><li><a href="/en-US/Add-ons/SDK/Low-Level_APIs/console_traceback">console/traceback</a></li><li><a href="/en-US/Add-ons/SDK/Low-Level_APIs/content_content">content/content</a></li><li><a href="/en-US/Add-ons/SDK/Low-Level_APIs/content_loader">content/loader</a></li><li><a href="/en-US/Add-ons/SDK/Low-Level_APIs/content_mod">content/mod</a></li><li><a href="/en-US/Add-ons/SDK/Low-Level_APIs/content_symbiont">content/symbiont</a></li><li><a href="/en-US/Add-ons/SDK/Low-Level_APIs/content_worker">content/worker</a></li><li><a href="/en-US/Add-ons/SDK/Low-Level_APIs/core_heritage">core/heritage</a></li><li><a href="/en-US/Add-ons/SDK/Low-Level_APIs/core_namespace">core/namespace</a></li><li><a href="/en-US/Add-ons/SDK/Low-Level_APIs/core_promise">core/promise</a></li><li><a href="/en-US/Add-ons/SDK/Low-Level_APIs/dev_panel">dev/panel</a></li><li><a href="/en-US/Add-ons/SDK/Low-Level_APIs/event_core">event/core</a></li><li><a href="/en-US/Add-ons/SDK/Low-Level_APIs/event_target">event/target</a></li><li><a href="/en-US/Add-ons/SDK/Low-Level_APIs/frame_hidden-frame">frame/hidden-frame</a></li><li><a href="/en-US/Add-ons/SDK/Low-Level_APIs/frame_utils">frame/utils</a></li><li><a href="/en-US/Add-ons/SDK/Low-Level_APIs/fs_path">fs/path</a></li><li><a href="/en-US/Add-ons/SDK/Low-Level_APIs/io_byte-streams">io/byte-streams</a></li><li><a href="/en-US/Add-ons/SDK/Low-Level_APIs/io_file">io/file</a></li><li><a href="/en-US/Add-ons/SDK/Low-Level_APIs/io_text-streams">io/text-streams</a></li><li><a href="/en-US/Add-ons/SDK/Low-Level_APIs/lang_functional">lang/functional</a></li><li><a href="/en-US/Add-ons/SDK/Low-Level_APIs/lang_type">lang/type</a></li><li><a href="/en-US/Add-ons/SDK/Low-Level_APIs/loader_cuddlefish">loader/cuddlefish</a></li><li><a href="/en-US/Add-ons/SDK/Low-Level_APIs/loader_sandbox">loader/sandbox</a></li><li><a href="/en-US/Add-ons/SDK/Low-Level_APIs/net_url">net/url</a></li><li><a href="/en-US/Add-ons/SDK/Low-Level_APIs/net_xhr">net/xhr</a></li><li><a href="/en-US/Add-ons/SDK/Low-Level_APIs/places_bookmarks">places/bookmarks</a></li><li><a href="/en-US/Add-ons/SDK/Low-Level_APIs/places_favicon">places/favicon</a></li><li><a href="/en-US/Add-ons/SDK/Low-Level_APIs/places_history">places/history</a></li><li><a href="/en-US/Add-ons/SDK/Low-Level_APIs/platform_xpcom">platform/xpcom</a></li><li><a href="/en-US/Add-ons/SDK/Low-Level_APIs/preferences_event-target">preferences/event-target</a></li><li><a href="/en-US/Add-ons/SDK/Low-Level_APIs/preferences_service">preferences/service</a></li><li><a href="/en-US/Add-ons/SDK/Low-Level_APIs/remote_child">remote/child</a></li><li><a href="/en-US/Add-ons/SDK/Low-Level_APIs/remote_parent">remote/parent</a></li><li><a href="/en-US/Add-ons/SDK/Low-Level_APIs/stylesheet_style">stylesheet/style</a></li><li><a href="/en-US/Add-ons/SDK/Low-Level_APIs/stylesheet_utils">stylesheet/utils</a></li><li><a href="/en-US/Add-ons/SDK/Low-Level_APIs/system_child_process">system/child_process</a></li><li><a href="/en-US/Add-ons/SDK/Low-Level_APIs/system_environment">system/environment</a></li><li><a href="/en-US/Add-ons/SDK/Low-Level_APIs/system_events">system/events</a></li><li><a href="/en-US/Add-ons/SDK/Low-Level_APIs/system_runtime">system/runtime</a></li><li><a href="/en-US/Add-ons/SDK/Low-Level_APIs/system_unload">system/unload</a></li><li><a href="/en-US/Add-ons/SDK/Low-Level_APIs/system_xul-app">system/xul-app</a></li><li><a href="/en-US/Add-ons/SDK/Low-Level_APIs/tabs_utils">tabs/utils</a></li><li><a href="/en-US/Add-ons/SDK/Low-Level_APIs/test_assert">test/assert</a></li><li><a href="/en-US/Add-ons/SDK/Low-Level_APIs/test_harness">test/harness</a></li><li><a href="/en-US/Add-ons/SDK/Low-Level_APIs/test_httpd">test/httpd</a></li><li><a href="/en-US/Add-ons/SDK/Low-Level_APIs/test_runner">test/runner</a></li><li><a href="/en-US/Add-ons/SDK/Low-Level_APIs/test_utils">test/utils</a></li><li><a href="/en-US/Add-ons/SDK/Low-Level_APIs/ui_button_action">ui/button/action</a></li><li><a href="/en-US/Add-ons/SDK/Low-Level_APIs/ui_button_toggle">ui/button/toggle</a></li><li><a href="/en-US/Add-ons/SDK/Low-Level_APIs/ui_frame">ui/frame</a></li><li><a href="/en-US/Add-ons/SDK/Low-Level_APIs/ui_id">ui/id</a></li><li><a href="/en-US/Add-ons/SDK/Low-Level_APIs/ui_sidebar">ui/sidebar</a></li><li><a href="/en-US/Add-ons/SDK/Low-Level_APIs/ui_toolbar">ui/toolbar</a></li><li><a href="/en-US/Add-ons/SDK/Low-Level_APIs/util_array">util/array</a></li><li><a href="/en-US/Add-ons/SDK/Low-Level_APIs/util_collection">util/collection</a></li><li><a href="/en-US/Add-ons/SDK/Low-Level_APIs/util_deprecate">util/deprecate</a></li><li><a href="/en-US/Add-ons/SDK/Low-Level_APIs/util_list">util/list</a></li><li><a href="/en-US/Add-ons/SDK/Low-Level_APIs/util_match-pattern">util/match-pattern</a></li><li><a href="/en-US/Add-ons/SDK/Low-Level_APIs/util_object">util/object</a></li><li><a href="/en-US/Add-ons/SDK/Low-Level_APIs/util_uuid">util/uuid</a></li><li><a href="/en-US/Add-ons/SDK/Low-Level_APIs/window_utils">window/utils</a></li></ol> 
+ 
+ </li> 
+ <li><a href="/en-US/Add-ons/SDK/Tools">Tools Reference</a> 
+  <ol> 
+   <li><a href="/en-US/Add-ons/SDK/Tools/console">console</a></li> 
+   <li><a href="/en-US/Add-ons/SDK/Tools/cfx">cfx</a></li> 
+   <li><a href="/en-US/Add-ons/SDK/Tools/cfx_to_jpm">cfx to jpm</a></li> 
+   <li><a href="/en-US/Add-ons/SDK/Tools/jpm">jpm</a></li> 
+   <li><a href="/en-US/Add-ons/SDK/Tools/package_json">package.json</a></li> 
+   <li><a href="/en-US/Add-ons/Add-on_Debugger">The Add-on Debugger</a></li> 
+  </ol> 
+ </li> 
+ <li><a href="/en-US/Add-ons/SDK/Release_notes">Release notes</a></li> 
+</ol></li>
+ <li><a href="#">Techniques</a>
+  <ol>
+   <li><a href="/en-US/Add-ons/Techniques/Promises">Promises</a></li>
+  </ol>
+ </li>
+ <li><a href="#">Recommended practices</a>
+  <ol>
+   <li><a href="/en-US/Add-ons/Performance_best_practices_in_extensions" title="Performance">Performance</a></li>
+   <li><a href="/en-US/Add-ons/Security_best_practices_in_extensions" title="Security">Security</a></li>
+   <li><a href="/en-US/Add-ons/Extension_etiquette" title="Etiquette">Etiquette</a></li>
+  </ol>
+ </li>
+ <li><a href="#">Themes</a>
+  <ol>
+   <li><a href="/Add-ons/Themes/Background" title="Lightweight themes">Lightweight themes</a></li>
+   <li><a href="/Add-ons/Themes/Background/FAQ" title="Lightweight themes FAQ">Lightweight themes FAQ</a></li>
+   <li><a href="/en-US/docs/Themes" title="Complete themes">Complete themes</a></li>
+  </ol>
+ </li>
+ <li><a href="#">Publishing add-ons</a>
+  <ol>
+   <li><a href="#" title="addons.mozilla.org">addons.mozilla.org</a>
+    <ol>
+     <li><a href="https://addons.mozilla.org/developers/addon/submit/">Submit a new add-on</a></li>
+     <li><a href="/en-US/Add-ons/AMO/Policy">Policies</a>
+      <ol>
+       <li><a href="/en-US/Add-ons/AMO/Policy/Submission">Add-on Submission</a></li>
+       <li><a href="/en-US/Add-ons/AMO/Policy/Reviews">Review Process</a></li>
+       <li><a href="/en-US/Add-ons/AMO/Policy/Maintenance">Maintaining Your Add-on</a></li>
+       <li><a href="/en-US/Add-ons/AMO/Policy/Featured">Featured Add-ons</a></li>
+       <li><a href="/en-US/Add-ons/AMO/Policy/Agreement">Developer Agreement</a></li>
+       <li><a href="/en-US/Add-ons/AMO/Policy/Contact">Contacting Us</a></li>
+      </ol>
+     </li>
+    </ol>
+   </li>
+   <li><a href="/en-US/Add-ons/Add-on_guidelines">Add-on guidelines</a></li>
+  </ol>
+ </li>
+ <li><a href="#">Community and Support</a>
+  <ol>
+   <li><a href="https://blog.mozilla.org/addons">Add-ons Blog</a></li>
+   <li><a href="https://forums.mozilla.org/addons">Add-on Forums</a></li>
+   <li><a href="http://stackoverflow.com/questions/tagged/firefox-addon">Stack Overflow</a></li>
+   <li><a href="https://groups.google.com/forum/#!forum/mozilla.dev.extensions">Development Newsgroup</a></li>
+   <li><a href="irc://irc.mozilla.org/extdev">IRC Channel</a></li>
+  </ol>
+ </li>
+</ol>
+    </div>
+  </nav>&nbsp;
+                
+                
+                <!-- approvals -->
+                
+              
+              </div>
+                      </div>
+        </div>
+      </div>
+    </div> <!-- ends "main-content" -->
+
+  <menu type="context" id="edit-history-menu">
+    <menuitem data-action="$edit" label="Edit page"></menuitem>
+    <menuitem data-action="$history" label="View page history"></menuitem>
+  </menu>
+  </div></main>
+
+  <!-- Footer -->
+  <footer><div class="center">
+    <div class="column-container">
+      <div class="column-main">
+                <p>
+          <bdi>&copy; 2005-2015 Mozilla Developer Network and individual contributors<br /> Content is available under <a href="/en-US/docs/Project:MDN/About#Copyrights_and_licenses">these licenses</a> &middot; <a href="/en-US/docs/Project:MDN/About">About MDN</a> &middot; <a href="//www.mozilla.org/about/legal/terms/mozilla">Terms</a> &middot; <a href="//www.mozilla.org/privacy/websites/">Privacy</a> &middot; <a href="//www.mozilla.org/privacy/websites/#cookies">Cookies</a> &middot; <a href="//github.com/mozilla/kuma">Contribute to the code</a></bdi>        </p>
+              </div>
+      <div class="column-strip">
+                        <form class="languages go" method="get" action="/en-US/docs/Web">
+      <label for="language">Other languages:</label>
+      <select id="language" class="wiki-l10n" name="next" dir="ltr">
+        <option value="/en-US/Add-ons/SDK/Tutorials/Getting_started" selected>
+          English (US)
+        </option>
+                  <option value="/de/Add-ons/SDK/Tutorials/Getting_started">
+            Deutsch
+          </option>          <option value="/es/docs/Mozilla/Add-ons/SDK/Tutorials/Getting_started">
+            Español
+          </option>          <option value="/ja/docs/Mozilla/Add-ons/SDK/%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB/Getting_started">
+            日本語
+          </option>          <option value="/zh-CN/docs/Mozilla/Add-ons/SDK/Tutorials/Getting_started">
+            中文 (简体)
+          </option>      </select>
+      <noscript><button type="submit">Go</button></noscript>
+    </form>
+                </div>
+    </div>
+  </div></footer>
+
+  <!-- site js -->
+    <script src="/en-US/jsi18n/build:63256d0"></script>
+  
+      <!--[if lte IE 8]><script src="/media/js/libs/selectivizr-1.0.2/selectivizr-build.js"></script><![endif]-->
+
+    <script src="https://login.persona.org/include.js"></script>
+<form id="_persona_login" method="post" action="/users/persona/signin" data-csrf-token-url="/users/persona/csrf" data-request='{"siteName": "Mozilla Developer Network", "siteLogo": "/media/img/opengraph-logo.png"}'>
+  <input type="hidden" name="csrfmiddlewaretoken" value="" id="_persona_csrf_token" />
+  <input type="hidden" name="next" value="" id="_persona_next_url"/>
+  <input type="hidden" name="process" value="" id="_persona_process"/>
+  <input type="hidden" name="assertion" id="_persona_assertion"/>
+</form>
+
+    <script src="https://developer.cdn.mozilla.net/media/js/main-min.js?build=63256d0"></script>
+
+          <script>
+        if(window.mdn && mdn.analytics) mdn.analytics.trackOutboundLinks();
+      </script>
+    
+          <script src="https://developer.cdn.mozilla.net/media/js/wiki-min.js?build=63256d0"></script>
+      
+    <script type="text/javascript">
+      if(window.jQuery) jQuery('.from-search-toc').mozSearchResults('');
+  </script>
+</body>
+</html>
